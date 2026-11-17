@@ -1,0 +1,29 @@
+/* Neonfall Arena's page chrome: a dark room, a glowing frame, one line of help.
+   The game itself is drawn entirely on the canvas by game/src/ui.js. */
+:root {
+  --room: #05070d;
+  --frame: #12233a;
+  --glow: #22d3ee;
+  --ink: #9db8d6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--room); }
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color: var(--ink);
+}
+.stage { display: grid; gap: 10px; justify-items: center; padding: 18px; }
+canvas {
+  width: min(1280px, 96vw);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #070b16;
+  border: 1px solid var(--frame);
+  border-radius: 10px;
+  box-shadow: 0 0 42px rgba(34, 211, 238, 0.16), 0 0 140px rgba(34, 211, 238, 0.07);
+  cursor: crosshair;
+}
+.hint { margin: 0; font-size: 12.5px; letter-spacing: 0.04em; color: var(--ink); opacity: 0.75; text-align: center; }
